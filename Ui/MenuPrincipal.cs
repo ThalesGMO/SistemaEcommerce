@@ -35,13 +35,16 @@ public class MenuPrincipal
                         menuAdicao.MenuAdicao();
                         break;
                     }  
-                case "2":  break;
+                case "2":
+                    {
+                        MenuListagem menuListagem = new MenuListagem(ServiceGlobal, NotificationGlobal);
+                        menuListagem.ListarProdutos();
+                        break;  
+                    } 
                 case "3":  break;
                 case "4":  break;
                 case "5": loop = false; break;
             }
         }
-
-
     }
 }

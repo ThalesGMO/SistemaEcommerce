@@ -5,7 +5,7 @@ namespace SistemaEcommerce.Classes;
 
 public class ProdutoVirtual : Produto
 {
-    public double TamanhoMb {get; private set;}
+    public double TamanhoMb { get; private set; }
     public ProdutoVirtual(string nome, decimal preco, string CodigoProduto, double tamanhoMb) : base(nome, preco, CodigoProduto)
     {
         SetTamanho(tamanhoMb);
@@ -17,6 +17,14 @@ public class ProdutoVirtual : Produto
             return null;
 
         TamanhoMb = tamanhoMb;
-            return "Tamanho do produto cadastrado com sucesso!";
+        return "Tamanho do produto cadastrado com sucesso!";
+    }
+    public override string ToString()
+    {
+        return @$"
+        Nome: {Nome}
+        Preco: {Preco}
+        String: {CodigoProduto}
+        Tamanho em Mb: {TamanhoMb}";
     }
 }

@@ -12,4 +12,15 @@ public class MenuListagem
         Service = produtoService;
         Notification = notificationRecebido;
     }
+
+    public void ListarProdutos()
+    {
+        Console.WriteLine("=============MENU DE LISTAGEM===============");
+        Console.WriteLine("[1] - Produto físico");
+        Console.WriteLine("[2] - Produto virtual");
+        Console.WriteLine("[3] - Listar todos");
+
+        string escolha = Console.ReadLine();
+        Service.ListarProdutos(int.Parse(escolha));
+    }
 }

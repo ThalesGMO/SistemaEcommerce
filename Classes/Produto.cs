@@ -12,4 +12,5 @@ public abstract class Produto
         Preco = preco;
         CodigoProduto = codigoProduto;
     }
+    public abstract override string ToString();
 }

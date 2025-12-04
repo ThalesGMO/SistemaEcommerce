@@ -22,9 +22,8 @@ public static class Helper
         {
             Console.WriteLine(mensagem);
             if (int.TryParse(Console.ReadLine(), out int entrada))
-            {
                 return entrada;
-            }
+            
             Console.WriteLine("Numero inválido, tente novamente");
         }
     }
@@ -35,11 +34,21 @@ public static class Helper
         {
             Console.WriteLine(mensagem);
             if (decimal.TryParse(Console.ReadLine(), out decimal entrada))
-            {
                 return entrada;
-            }
+            
             Console.WriteLine("Numero inválido, tente novamente");
+        }
+    }
 
+    public static double ValidarDouble(string mensagem)
+    {
+        while(true)
+        {
+            Console.WriteLine(mensagem);
+            if (double.TryParse(Console.ReadLine(), out double entrada))
+                return entrada;
+        
+            Console.WriteLine("Numero inválido, tente novamente");
         }
     }
 }

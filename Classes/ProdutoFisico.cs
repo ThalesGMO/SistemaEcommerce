@@ -36,5 +36,13 @@ public class ProdutoFisico : Produto
         QuantidadeEstoque += quantidade;
         return $"Foram adicionadas mais {quantidade} de {Nome} ao estoque";
     }
-    
+
+    public override string ToString()
+    {
+        return @$"
+        Nome: {Nome}
+        Preco: {Preco}
+        String: {CodigoProduto}
+        Estoque: {QuantidadeEstoque}";
+    }
 }

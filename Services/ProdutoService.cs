@@ -39,4 +39,23 @@ public class ProdutoService
         }
         NotificationGlobal.AdicionarNotificacao("Produto não cadastrado, erro no tamanho do produto");
     }
+
+    public void ListarProdutos(int escolha)
+    {
+        if (ProdutoRepositoryGlobal.ListarProdutos().Count() == 0)
+        {
+            NotificationGlobal.AdicionarNotificacao("Não existem produtos para listar nesse momento");
+            return;
+        }
+        
+        foreach (Produto produto in ProdutoRepositoryGlobal.ListarProdutos())
+        {
+            if (produto is ProdutoFisico && escolha == 1)
+                produto.ToString();
+            else if (produto is ProdutoVirtual && escolha == 2)
+                produto.ToString();
+            else
+                produto.ToString();
+        }
+    }
 }
