@@ -22,6 +22,7 @@ public static class Helper
         {
             Console.WriteLine(mensagem);
             if (int.TryParse(Console.ReadLine(), out int entrada))
+
                 return entrada;
             
             Console.WriteLine("Numero inválido, tente novamente");

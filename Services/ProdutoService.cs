@@ -47,15 +47,15 @@ public class ProdutoService
             NotificationGlobal.AdicionarNotificacao("Não existem produtos para listar nesse momento");
             return;
         }
-        
+
         foreach (Produto produto in ProdutoRepositoryGlobal.ListarProdutos())
         {
             if (produto is ProdutoFisico && escolha == 1)
-                produto.ToString();
+                Console.WriteLine(produto.ToString());
             else if (produto is ProdutoVirtual && escolha == 2)
-                produto.ToString();
+                Console.WriteLine(produto.ToString());
             else
-                produto.ToString();
+                Console.WriteLine(produto.ToString());
         }
     }
 }
