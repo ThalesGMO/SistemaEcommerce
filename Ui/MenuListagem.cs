@@ -23,10 +23,10 @@ public class MenuListagem
         string escolha = Console.ReadLine();
         Service.ListarProdutos(int.Parse(escolha));
 
-        if (Notification.TemNotificacao())
+          if (Notification.TemNotificacao())
         {
-            Notification.LerNotificacoes();
-            Notification.LimparNotificacoes();
+            Notification.ExibirNotificacao();
+            return;
         }
     }
 }

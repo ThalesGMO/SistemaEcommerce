@@ -1,5 +1,7 @@
+using System.Security.Cryptography.X509Certificates;
 using SistemaEcommerce.Classe;
 using SistemaEcommerce.Classes;
+using SistemaEcommerce.Enum;
 using SistemaEcommerce.Interface;
 using SistemaEcommerce.Interfaces;
 
@@ -25,7 +27,7 @@ public class ProdutoService
             ProdutoRepositoryGlobal.AdicionarProduto(produtoFisico);
             return;
         }
-        NotificationGlobal.AdicionarNotificacao("Produto não cadastrado, erro no estoque inserido");
+        NotificationGlobal.AdicionarNotificacao("Produto não cadastrado, erro no estoque inserido", NotificationEnum.Erro);
     }
 
     public void AdicionarProdutoVirtual(string nome, decimal preco, string codigoProduto, double tamanhoMb)
@@ -37,14 +39,14 @@ public class ProdutoService
             ProdutoRepositoryGlobal.AdicionarProduto(produtoVirtual);
             return;
         }
-        NotificationGlobal.AdicionarNotificacao("Produto não cadastrado, erro no tamanho do produto");
+        NotificationGlobal.AdicionarNotificacao("Produto não cadastrado, erro no tamanho do produto", NotificationEnum.Erro);
     }
 
     public void ListarProdutos(int escolha)
     {
         if (ProdutoRepositoryGlobal.ListarProdutos().Count() == 0)
         {
-            NotificationGlobal.AdicionarNotificacao("Não existem produtos para listar nesse momento");
+            NotificationGlobal.AdicionarNotificacao("Não existem produtos para listar nesse momento", NotificationEnum.Erro);
             return;
         }
 
@@ -57,5 +59,10 @@ public class ProdutoService
             else
                 Console.WriteLine(produto.ToString());
         }
+    }
+
+    public void RemoverProduto(string codigoEscolhido)
+    {
+        ProdutoRepositoryGlobal.RemoverProduto(ProdutoRepositoryGlobal.ListarProdutos().FirstOrDefault(produto => produto.CodigoProduto == codigoEscolhido));
     }
 }

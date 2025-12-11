@@ -40,13 +40,13 @@ public class MenuAdicaoProduto
         int quantidade = Helper.Validarint("Digite a quantidade inicial de estoque do produto");
 
         Service.AdicionarProdutoFisico(nome, preco, codigo, quantidade);
-
+        
         if (Notification.TemNotificacao())
         {
-            Notification.LerNotificacoes();
-            Notification.LimparNotificacoes();
+            Notification.ExibirNotificacao();
             return;
         }
+
         Console.WriteLine("Produto físico adicionado com sucesso");
     }
 
@@ -61,10 +61,10 @@ public class MenuAdicaoProduto
 
         if (Notification.TemNotificacao())
         {
-            Notification.LerNotificacoes();
-            Notification.LimparNotificacoes();
+            Notification.ExibirNotificacao();
             return;
         }
-        Console.WriteLine("Produto físico adicionado com sucesso");
+
+        Console.WriteLine("Produto virtual adicionado com sucesso");
     }
 }

@@ -5,7 +5,7 @@ namespace SistemaEcommerce.Repository;
 
 public class ProdutoRepository : IProdutoRepository
 {
-    private List<Produto> produtos = new List<Produto>();
+    private readonly List<Produto> produtos = [];
 
     public void AdicionarProduto(Produto produto)
     {
@@ -14,7 +14,7 @@ public class ProdutoRepository : IProdutoRepository
 
     public void AtualizarProduto(string codigoProduto)
     {
-        
+        //Lógica de atualização de produto
     }
 
     public List<Produto> ListarProdutos()

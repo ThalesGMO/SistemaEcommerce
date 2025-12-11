@@ -1,5 +1,4 @@
 ﻿
-using SistemaEcommerce.Classe;
 using SistemaEcommerce.Interface;
 using SistemaEcommerce.Interfaces;
 using SistemaEcommerce.Repository;
